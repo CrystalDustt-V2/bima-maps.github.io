@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkir Bima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #comment-list {
+            margin-top: 20px;
+        }
+
+        .comment-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .rating {
+            color: gold;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Parkir Bima</h1>
+        <nav>
+            <ul>
+                <li><a href="#map">Peta Parkir</a></li>
+                <li><a href="#comments">Komentar</a></li>
+                <li><a href="#education">Edukasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="map">
+            <h2>Peta Lokasi Parkir</h2>
+            <div id="map-container">
+                <!-- Gantilah URL_PETA_ANDA dengan URL embed peta dari Google Maps -->
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7468.4608950454785!2d118.74658760339547!3d-8.46218689383725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1752799473135!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section id="comments">
+            <h2>Komentar dan Rating</h2>
+            <form id="comment-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required>
+                
+                <label for="rating">Rating:</label>
+                <select id="rating" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="comment">Komentar:</label>
+                <textarea id="comment" required></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+            <div id="comment-list">
+                <!-- Daftar komentar akan ditampilkan di sini -->
+            </div>
+       
